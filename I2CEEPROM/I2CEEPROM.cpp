@@ -5,10 +5,9 @@
  * \date 29 June 2016
  * \license MIT License (contact me if too restrictive)
  * \copyright Copyright (c) 2016 Quentin Comte-Gaz
- * \version 1.0
+ * \version 1.1
  */
 
-#include "Arduino.h"
 #include "I2CEEPROM.h"
 #include <Wire.h>
 

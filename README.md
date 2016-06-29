@@ -12,14 +12,14 @@ It has been fully tested with 24LC256 device but should work with others.
 
 2) On your Arduino IDE, click "Sketch" menu and then "Include Library > Add .ZIP Libraries"
 
-3) You can now use the library on your project on launch an example ("File > Examples")
+3) You can now use the library for your project or launch an example ("File > Examples")
 
 
 ## How to connect I2C EEPROM to arduino
 
 Most of I2C EEPROMs are connected the same way.
 
-Here is the connection for 24LC256 device:
+Here are the pin connections for 24LC256 device:
 
 24LC256  | Arduino Source
 -------- |  --------
@@ -54,4 +54,4 @@ This project is under MIT license. This means you can use it as you want (just d
 
 ## Contribute
 
-If you want to add more examples or improve the library, just push your change with proper commit message and right wrapping.
+If you want to add more examples or improve the library, just create a pull request with proper commit message and right wrapping.

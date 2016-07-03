@@ -17,7 +17,7 @@ I2CEEPROM::I2CEEPROM(int i2c_device_address)
   Wire.begin();
 }
 
-void I2CEEPROM::write(unsigned int address, byte data)
+void I2CEEPROM::write(unsigned int address, byte data) const
 {
   Wire.beginTransmission(_i2c_device_address);
   Wire.write((int)(address >> 8));   // MSB
@@ -29,7 +29,7 @@ void I2CEEPROM::write(unsigned int address, byte data)
   delay(5);
 }
 
-byte I2CEEPROM::read(unsigned int address)
+byte I2CEEPROM::read(unsigned int address) const
 {
   byte read_data = 0xFF;
 

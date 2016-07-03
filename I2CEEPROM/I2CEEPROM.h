@@ -35,14 +35,14 @@ class I2CEEPROM
      * \param address (unsigned int) EEPROM internal address (most of the time, first address is 0x00)
      * \param data (byte) Byte to write at EEPROM internal address \p address
      */
-    void write(unsigned int address, byte data);
+    void write(unsigned int address, byte data) const;
 
     /*!
      * \brief read Read one byte in EEPROM device at EEPROM internal address \p address
      * \param address (unsigned int) EEPROM internal address (most of the time, first address is 0x00)
      * \return (byte) Read Byte at EEPROM internal address \p address (returns 0xFF if an error occurred)
      */
-    byte read(unsigned int address);
+    byte read(unsigned int address) const;
 
   private:
     int _i2c_device_address;

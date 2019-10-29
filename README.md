@@ -21,13 +21,13 @@ Most of I2C EEPROMs are connected the same way.
 
 Here are the pin connections for 24LC256 device:
 
-|24LC256 |Arduino Source             |
-|--------|--------                   |
-|VCC     |5V                         |
-|GND     |GND                        |
-|SCL     |SCL (A5)                   |
-|SDA     |SDA (A4)                   |
-|Others  |GND (-> I2C address = 0x50)|
+|24LC256|Arduino Source             |
+|-------|-------                    |
+|VCC    |5V                         |
+|GND    |GND                        |
+|SCL    |SCL (A5)                   |
+|SDA    |SDA (A4)                   |
+|Others |GND (-> I2C address = 0x50)|
 
 <img src="schematics.png" width="400">
 

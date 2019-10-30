@@ -36,13 +36,13 @@ Here are the pin connections for 24LC256 device:
 Three examples are provided with this library:
 
 ### Simple Read through all EEPROM
-<a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/I2CEEPROM/examples/I2CEEPROM_Read/I2CEEPROM_Read.ino">Link to source code</a>
+<a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/examples/I2CEEPROM_Read/I2CEEPROM_Read.ino">Link to source code</a>
 
 ### Simple Write though all EEPROM
-<a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/I2CEEPROM/examples/I2CEEPROM_Write/I2CEEPROM_Write.ino">Link to source code</a>
+<a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/examples/I2CEEPROM_Write/I2CEEPROM_Write.ino">Link to source code</a>
 
 ### Check consistency of the EEPROM
-<a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/I2CEEPROM/examples/I2CEEPROM_FullCheck/I2CEEPROM_FullCheck.ino">Link to source code</a>
+<a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/examples/I2CEEPROM_FullCheck/I2CEEPROM_FullCheck.ino">Link to source code</a>
 
 ## License
 

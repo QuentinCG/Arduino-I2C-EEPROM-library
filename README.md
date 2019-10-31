@@ -1,5 +1,5 @@
 # I2C EEPROMs library for Arduino
-[![Build Status](https://travis-ci.org/QuentinCG/Arduino-I2C-EEPROM-library.svg?branch=master)](https://travis-ci.org/QuentinCG/Arduino-I2C-EEPROM-library) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/77f8ec4dae9c491a81c68d7df4e89eb1)](https://www.codacy.com/manual/QuentinCG/Arduino-I2C-EEPROM-library?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=QuentinCG/Arduino-I2C-EEPROM-library&amp;utm_campaign=Badge_Grade) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/LICENSE.md)
+[![Build Status](https://travis-ci.org/QuentinCG/Arduino-I2C-EEPROM-library.svg?branch=master)](https://travis-ci.org/QuentinCG/Arduino-I2C-EEPROM-library) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/77f8ec4dae9c491a81c68d7df4e89eb1)](https://www.codacy.com/manual/QuentinCG/Arduino-I2C-EEPROM-library?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=QuentinCG/Arduino-I2C-EEPROM-library&amp;utm_campaign=Badge_Grade) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/LICENSE.md) [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/QuentinCG)
  
 ## What is it
 

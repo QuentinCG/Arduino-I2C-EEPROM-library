@@ -44,6 +44,10 @@ Three examples are provided with this library:
 ### Check consistency of the EEPROM
 <a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/examples/I2CEEPROM_FullCheck/I2CEEPROM_FullCheck.ino">Link to source code</a>
 
+## Interesting fork
+
+- <a target="_blank" href="https://github.com/Bu-Gee/Arduino-I2C-EEPROM-library">Fork from this project handling CAT24C02, CAT24C04, CAT24C08 and CAT24C16 EEPROMs.</a>
+
 ## License
 
 This project is under MIT license. This means you can use it as you want (just don't delete the library header).

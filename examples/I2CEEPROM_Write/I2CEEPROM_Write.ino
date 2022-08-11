@@ -2,9 +2,9 @@
  * \brief Write all bytes of I2C EEPROMs
  *
  * \author Quentin Comte-Gaz <quentin@comte-gaz.com>
- * \date 29 June 2016
+ * \date 27 December 2021
  * \license MIT License (contact me if too restrictive)
- * \copyright Copyright (c) 2016 Quentin Comte-Gaz
+ * \copyright Copyright (c) 2021 Quentin Comte-Gaz
  * \version 1.0
  */
 
@@ -43,8 +43,10 @@ void loop()
   Serial.print(" (data)\n");
 
   current_address++;
-  if (current_address >= EEPROM_BYTES) {
-    while(1) {
+  if (current_address >= EEPROM_BYTES)
+  {
+    while(1)
+    {
       Serial.print("End of demo\n");
       delay(60000);
     }

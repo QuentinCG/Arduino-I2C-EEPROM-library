@@ -2,9 +2,9 @@
  * \brief I2C EEPROMs data writer/reader (implementation)
  *
  * \author Quentin Comte-Gaz <quentin@comte-gaz.com>
- * \date 29 June 2016
+ * \date 27 December 2021
  * \license MIT License (contact me if too restrictive)
- * \copyright Copyright (c) 2016 Quentin Comte-Gaz
+ * \copyright Copyright (c) 2021 Quentin Comte-Gaz
  * \version 1.1
  */
 
@@ -29,8 +29,8 @@ void I2CEEPROM::write(unsigned int address, byte data) const
 
   Wire.beginTransmission(dev_address);
   // Send an extra address byte in 16 bit addressing:
-  if(_addressing_mode == ADDRESS_MODE_16BIT) Wire.write((int)(address >> 8));   // MSB
-  Wire.write((int)(address & 0xFF)); // LSB
+  if(_addressing_mode == ADDRESS_MODE_16BIT) Wire.write((int)(address >> 8));   // First part of the address (MSB)
+  Wire.write((int)(address & 0xFF)); // Second part of the address (LSB)
   Wire.write(data);                  // Write byte
   Wire.endTransmission();
 
@@ -52,7 +52,8 @@ byte I2CEEPROM::read(unsigned int address) const
   // Request 1 byte from device
   Wire.requestFrom(dev_address, 1);
 
-  if (Wire.available()) {
+  if (Wire.available())
+  {
     read_data = Wire.read();
   }
 

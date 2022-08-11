@@ -5,9 +5,9 @@
  * All errors will be displayed.
  *
  * \author Quentin Comte-Gaz <quentin@comte-gaz.com>
- * \date 29 June 2016
+ * \date 27 December 2021
  * \license MIT License (contact me if too restrictive)
- * \copyright Copyright (c) 2016 Quentin Comte-Gaz
+ * \copyright Copyright (c) 2021 Quentin Comte-Gaz
  * \version 1.0
  */
 
@@ -45,6 +45,7 @@ void setup(void)
 
 void loop()
 {
+  // We do the check only once (in the setup)
 }
 
 /*!
@@ -53,10 +54,12 @@ void loop()
 void writeTest(void)
 {
   Serial.print("Writing test values in EEPROM...\n");
-  for (unsigned int address = 0; address < EEPROM_BYTES; address++) {
+  for (unsigned int address = 0; address < EEPROM_BYTES; address++)
+  {
     i2c_eeprom.write(address, address/1024);
 
-    if ((address%1024) == 0) {
+    if ((address%1024) == 0)
+    {
       Serial.print(address, DEC);
       Serial.print("/");
       Serial.print(EEPROM_BYTES, DEC);
@@ -75,10 +78,12 @@ void readTest()
 
   Serial.print("Reading the EEPROM and check consistency\n");
 
-  for (unsigned int address = 0; address < EEPROM_BYTES; address++) {
+  for (unsigned int address = 0; address < EEPROM_BYTES; address++)
+  {
     data = i2c_eeprom.read(address);
 
-    if (data != address/1024) {
+    if (data != address/1024)
+    {
       errors++;
       Serial.print("Error on address ");
       Serial.print(address, HEX);
@@ -89,7 +94,8 @@ void readTest()
       Serial.print("\n");
     }
 
-    if ((address%1024) == 0) {
+    if ((address%1024) == 0)
+    {
       Serial.print(address, DEC);
       Serial.print("/");
       Serial.print(EEPROM_BYTES, DEC);

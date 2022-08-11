@@ -21,23 +21,35 @@
 #include "WProgram.h"
 #endif
 
-// Enum to set the number of bits used in I2C address for the memory address.
-enum {
+// Enum to set the number of bits used in I2C address for the memory address for CAT24CXX devices.
+// The "Classic" device sends the address and then 16-bits for the address.
+// The CAT24CXX devices include the 'n' MSB of the MEMORY address as the 'n' LSB of the I2C address.
+//    Where n is 3 for the 16 kb, 2 for the 8 kb, 1 for the 4 kb, and 0 for the 2kb
+enum address_mode {
     ADDRESS_MODE_16BIT,
     ADDRESS_MODE_8BIT = 0,
-    ADDRESS_MODE_9BIT = 1,
+    ADDRESS_MODE_9BIT = 1, 
     ADDRESS_MODE_10BIT = 2,
     ADDRESS_MODE_11BIT = 3
 };
+
+// Map device names to Addressing mode to make it easier to use
+#define EEPROM_DEVICE_CLASSIC  ADDRESS_MODE_16BIT
+#define EEPROM_DEVICE_CAT24C02 ADDRESS_MODE_8BIT
+#define EEPROM_DEVICE_CAT24C04 ADDRESS_MODE_9BIT
+#define EEPROM_DEVICE_CAT24C08 ADDRESS_MODE_10BIT
+#define EEPROM_DEVICE_CAT24C16 ADDRESS_MODE_11BIT
 
 class I2CEEPROM
 {
   public:
     /*!
      * \brief I2CEEPROM Initialize I2C EEPROM instance
-     * \param device_address (int) I2C address of the EEPROM device
+     * \param device_address (int) I2C address  of the EEPROM device
+     * \param addressing_mode (enum) Selects the device in use (defaults to "Classic", non CAT24CXX)
+     * \param initialize_wire (boolean) Initializes the Wire library (defaults to true)
      */
-    I2CEEPROM(int i2c_device_address = 0x50, int addressing_mode = ADDRESS_MODE_16BIT);
+    I2CEEPROM(int i2c_device_address = 0x50, enum address_mode addressing_mode = EEPROM_DEVICE_CLASSIC, boolean initialize_wire = true);
 
     /*!
      * \brief write Write one byte \p data in EEPROM device at EEPROM internal address \p address

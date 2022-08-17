@@ -2,10 +2,10 @@
  * \brief Write all bytes of I2C EEPROMs
  *
  * \author Quentin Comte-Gaz <quentin@comte-gaz.com>
- * \date 27 December 2021
+ * \date 17 August 2022
  * \license MIT License (contact me if too restrictive)
- * \copyright Copyright (c) 2021 Quentin Comte-Gaz
- * \version 1.0
+ * \copyright Copyright (c) 2022 Quentin Comte-Gaz
+ * \version 1.2
  */
 
 #include <I2CEEPROM.h>
@@ -13,7 +13,10 @@
 #define CHIP_ADDRESS 0x50 // Address of EEPROM chip (24LC256->0x50)
 #define EEPROM_BYTES 32768 // Number of bytes in EEPROM chip
 
-I2CEEPROM i2c_eeprom(CHIP_ADDRESS); // Create I2C EEPROM instance
+// Uncomment if you use a CAT24Cxx EEPROM (not needed for 24LCxxx EEPROM)
+//#define CAT_EEPROM_DEVICE EEPROM_DEVICE_CAT24C16 // You can use one of those elements: EEPROM_DEVICE_CAT24C01, EEPROM_DEVICE_CAT24C02, EEPROM_DEVICE_CAT24C04, EEPROM_DEVICE_CAT24C08, EEPROM_DEVICE_CAT24C16
+
+I2CEEPROM i2c_eeprom(CHIP_ADDRESS/*, CAT_EEPROM_DEVICE*/); // Create I2C EEPROM instance
 unsigned int current_address = 0;
 
 // Byte to send in all EEPROM

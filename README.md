@@ -7,6 +7,10 @@ This library (with examples) is designed to be integrated in projects using I2C 
 It can read and write data from I2C EEPROMs.
 It has been fully tested with 24LC256 device but should work with others.
 
+It should be compatible with 24LCxxx and CAT24Cxxx EEPROMs:
+ - 24LC512, 24LC256, 24LC128, ...
+ - CAT24C01, CAT24C02, CAT24C04, CAT24C08, CAT24C16, ...
+
 ## How to install
 
 1) Download <a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/releases/download/1.0.0/I2CEEPROM_v1_0_0.zip">latest release</a>
@@ -31,6 +35,31 @@ Here are the pin connections for 24LC256 device:
 
 <img src="schematics.png" width="400">
 
+## How to use the EEPROM (CAT24Cxx & 24LCxxx & others) ?
+
+ - If you use a 24LCxxx EEPROM, you can initialize the EEPROM this way:
+```cpp
+#define CHIP_ADDRESS 0x50 // Address of EEPROM chip
+
+I2CEEPROM i2c_eeprom(CHIP_ADDRESS);
+
+// Read and write the same value from EEPROM
+i2c_eeprom.write(0 /* value address */, 15 /* value to write */);
+unsigned int read_value = i2c_eeprom.read(0 /* value address */);
+```
+ - If you use a CAT24Cxx EEPROM, you need to initialize the EEPROM this way:
+```cpp
+#define CHIP_ADDRESS 0x50 // Address of EEPROM chip
+#define CAT_EEPROM_DEVICE EEPROM_DEVICE_CAT24C01 // You can use one of those elements: EEPROM_DEVICE_CAT24C01, EEPROM_DEVICE_CAT24C02, EEPROM_DEVICE_CAT24C04, EEPROM_DEVICE_CAT24C08, EEPROM_DEVICE_CAT24C16
+
+I2CEEPROM i2c_eeprom(CHIP_ADDRESS, CAT_EEPROM_DEVICE);
+
+// Read and write the same value from EEPROM
+i2c_eeprom.write(0 /* value address */, 15 /* value to write */);
+unsigned int read_value = i2c_eeprom.read(0 /* value address */);
+```
+ - If you use an other EEPROM, it should work the same way as 24LCxxx EEPROM (maybe not the same I2C address)
+
 ## Examples
 
 Three examples are provided with this library:
@@ -44,10 +73,6 @@ Three examples are provided with this library:
 ### Check consistency of the EEPROM
 <a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/examples/I2CEEPROM_FullCheck/I2CEEPROM_FullCheck.ino">Link to source code</a>
 
-## Interesting fork
-
-- <a target="_blank" href="https://github.com/Bu-Gee/Arduino-I2C-EEPROM-library">Fork from this project handling CAT24C02, CAT24C04, CAT24C08 and CAT24C16 EEPROMs.</a>
-
 ## License
 
 This project is under MIT license. This means you can use it as you want (just don't delete the library header).
@@ -55,3 +80,7 @@ This project is under MIT license. This means you can use it as you want (just d
 ## Contribute
 
 If you want to add more examples or improve the library, just create a pull request with proper commit message and right wrapping.
+
+## Contributors
+
+- Thank you <a target="_blank" href="https://github.com/Bu-Gee">Bu-Gee</a> for your help on adding CAT24Cxx compatibility from this <a target="_blank" href="https://github.com/Bu-Gee/Arduino-I2C-EEPROM-library">fork</a>.

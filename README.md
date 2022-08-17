@@ -13,7 +13,7 @@ It should be compatible with 24LCxxx and CAT24Cxxx EEPROMs:
 
 ## How to install
 
-1) Download <a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/releases/download/1.0.0/I2CEEPROM_v1_0_0.zip">latest release</a>
+1) Download <a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/releases/">latest release (zip file, not the source code)</a>
 
 2) On your Arduino IDE, click "Sketch" menu and then "Include Library > Add .ZIP Libraries"
 

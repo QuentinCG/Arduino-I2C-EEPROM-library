@@ -5,10 +5,10 @@
  * All errors will be displayed.
  *
  * \author Quentin Comte-Gaz <quentin@comte-gaz.com>
- * \date 17 August 2022
+ * \date 15 January 2023
  * \license MIT License (contact me if too restrictive)
- * \copyright Copyright (c) 2022 Quentin Comte-Gaz
- * \version 1.2
+ * \copyright Copyright (c) 2023 Quentin Comte-Gaz
+ * \version 1.3
  */
 
 #include <I2CEEPROM.h>

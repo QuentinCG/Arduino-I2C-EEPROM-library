@@ -2,15 +2,16 @@
  * \brief I2C EEPROMs data writer/reader library
  *
  * \author Quentin Comte-Gaz <quentin@comte-gaz.com>
- * \date 17 August 2022
+ * \date 15 January 2023
  * \license MIT License (contact me if too restrictive)
- * \copyright Copyright (c) 2022 Quentin Comte-Gaz
- * \version 1.2
+ * \copyright Copyright (c) 2023 Quentin Comte-Gaz
+ * \version 1.3
  *
  * \history
  *  - v1.0 Main design of the library
  *  - v1.1 Add Arduino < 1.0 compatibility
  *  - v1.2 Add CAT24Cxx compatibility
+ *  - v1.3 Add update() method
  */
 
 #ifndef I2CEEPROM_h
@@ -67,6 +68,13 @@ class I2CEEPROM
      * \return (byte) Read Byte at EEPROM internal address \p address (returns 0xFF if an error occurred)
      */
     byte read(unsigned int address) const;
+
+    /*!
+     * \brief update Update one byte \p data in EEPROM device at EEPROM internal address \p address if not already the correct one (will read then write if not identical)
+     * \param address (unsigned int) EEPROM internal address (most of the time, first address is 0x00)
+     * \param data (byte) Byte to write at EEPROM internal address \p address
+     */
+    void update(unsigned int address, byte data) const;
 
   private:
     /*!

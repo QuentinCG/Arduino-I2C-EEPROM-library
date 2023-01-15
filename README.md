@@ -70,6 +70,9 @@ Three examples are provided with this library:
 ### Simple Write though all EEPROM
 <a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/examples/I2CEEPROM_Write/I2CEEPROM_Write.ino">Link to source code</a>
 
+### Simple Update though all EEPROM
+<a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/examples/I2CEEPROM_Update/I2CEEPROM_Update.ino">Link to source code</a>
+
 ### Check consistency of the EEPROM
 <a target="_blank" href="https://github.com/QuentinCG/Arduino-I2C-EEPROM-library/blob/master/examples/I2CEEPROM_FullCheck/I2CEEPROM_FullCheck.ino">Link to source code</a>
 

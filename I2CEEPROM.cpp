@@ -2,10 +2,10 @@
  * \brief I2C EEPROMs data writer/reader (implementation)
  *
  * \author Quentin Comte-Gaz <quentin@comte-gaz.com>
- * \date 17 August 2022
+ * \date 15 January 2023
  * \license MIT License (contact me if too restrictive)
- * \copyright Copyright (c) 2022 Quentin Comte-Gaz
- * \version 1.2
+ * \copyright Copyright (c) 2023 Quentin Comte-Gaz
+ * \version 1.3
  */
 
 #include "I2CEEPROM.h"
@@ -90,6 +90,19 @@ byte I2CEEPROM::read(unsigned int address) const
   }
 
   return read_data;
+}
+
+void I2CEEPROM::update(unsigned int address, byte data) const
+{
+  if (read(address) != data)
+  {
+    write(address, data);
+  }
+  else
+  {
+    // Data to write is the same as data already written
+    // => No need to write !
+  }
 }
 
 uint8_t I2CEEPROM::generate_I2C_address(uint16_t address) const 

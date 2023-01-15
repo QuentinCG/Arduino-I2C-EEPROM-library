@@ -1,5 +1,5 @@
 /*
- * \brief Read all bytes of I2C EEPROMs
+ * \brief Update all bytes of I2C EEPROMs
  *
  * \author Quentin Comte-Gaz <quentin@comte-gaz.com>
  * \date 15 January 2023
@@ -19,6 +19,9 @@
 I2CEEPROM i2c_eeprom(CHIP_ADDRESS/*, CAT_EEPROM_DEVICE*/); // Create I2C EEPROM instance
 unsigned int current_address = 0;
 
+// Byte to send in all EEPROM
+byte data_to_send = 0x23;
+
 void setup(void)
 {
   Serial.begin(9600);
@@ -34,10 +37,12 @@ void setup(void)
 
 void loop()
 {
-  Serial.print("Read: 0x");
+  i2c_eeprom.update(current_address, data_to_send);
+
+  Serial.print("Update: 0x");
   Serial.print(current_address, HEX);
   Serial.print(" (address) -> 0x");
-  Serial.print(i2c_eeprom.read(current_address), HEX);
+  Serial.print(data_to_send, HEX);
   Serial.print(" (data)\n");
 
   current_address++;
